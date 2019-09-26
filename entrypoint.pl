@@ -67,6 +67,11 @@ while(readdir $clientbundles) {
 
 closedir($clientbundles);
 
+
+# TODO: My goal was to have the do_clone.pl script watch the docker service log output
+#       and remove the cloner stack when it sees this output but for some reason it
+#       never comes through in the docker logs output.
+#
 print "done with all client bundles\n";
 
 

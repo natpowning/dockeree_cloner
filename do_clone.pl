@@ -59,6 +59,10 @@ system("docker build -t cloner .");
 
 system("docker stack deploy --compose-file cloner-stack.yml cloner");
 
+
+# TODO: Have this script remove the cloner stack once it sees a string
+#       in the docker service logs output that indicates the process is done.
+#
 while(1) {
     my $log_output = `docker service logs cloner_cloner`;
 
