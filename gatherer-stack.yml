@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  gatherer:
+    image: gatherer
+    deploy:
+      replicas: 1
+    configs:
+      - source: harvester.it.properties.0
+        target: /run/configs/harvester.it.properties.0
+    secrets:
+      - harvester.db.password.0
+
+configs:
+  harvester.it.properties.0:
+    external: true
+
+secrets:
+  harvester.db.password.0:
+    external: true
+
